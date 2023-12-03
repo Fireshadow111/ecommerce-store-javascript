@@ -1,0 +1,40 @@
+*{
+  font-family: 'Roboto';
+}
+
+:root{
+  --razerGreen: #44d62c;
+}
+body{
+  background-color: black;
+
+}
+
+
+img{
+  margin-top: 50px;
+}
+
+.homeImage{
+  margin-top: 100px;
+  
+}
+
+.fProducts{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  justify-content: space-evenly;
+}
+
+.card-img-top{
+  height: 500px;
+}
+
+#footer {
+  text-align: center;
+}
+
+
