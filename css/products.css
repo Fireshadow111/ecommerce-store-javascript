@@ -1,0 +1,17 @@
+*{
+  font-family: 'Roboto';
+}
+
+:root{
+  --razerGreen: #44d62c;
+}
+body{
+  background-color: black;
+
+}
+
+
+
+#footer {
+  text-align: center;
+}
