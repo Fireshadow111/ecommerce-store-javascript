@@ -1,6 +1,8 @@
+//Array
 let products = [];
 
-function ProductDetails(name, quantity,price){
+//Creating constructor function
+function ProductDetails(id, name, quantity,price, description, url){
     this.id=id;
     this.name = name,
     this.quantity=quantity,
@@ -10,38 +12,49 @@ function ProductDetails(name, quantity,price){
    
 }
 
-let item1 = new ProductDetails('Razer Blade 15', 1, '$2499.99', )
+//Making objects with constructor function
+let item1 = new ProductDetails('1','Razer Blade 15', 1, '$2499.99', 'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)', 'https://i.postimg.cc/9fxHD8sX/razer-laptop.jpg' )
 
-let item2 = new ProductDetails('Razer Viper V2', 1, '$149.99')
-let item3 = new ProductDetails('Razer BlackWidow', 1, '$229.99')
-let item4 = new ProductDetails('Razer BlackShark V2 ', 1, '$99.99')
-let item5 = new ProductDetails('Razer Unleashed Zip Hoodie', 1, '$69.99')
-let item6 = new ProductDetails('Razer Rogue 14 Backpack', 1, '$59.99')
+let item2 = new ProductDetails('2','Razer Viper V2', 1, '$149.99', 'Ultra-lightweight, Ultra-fast Wireless Esports Mouse','https://i.postimg.cc/g2nV9ndM/razer-mouse.jpg')
 
+let item3 = new ProductDetails('3','Razer BlackWidow Pro', 1, '$229.99', 'Mechanical Gaming Keyboard with Razer Chroma™ RGB', 'https://i.postimg.cc/QdpzT4KG/razer-keyboard.jpg' )
+let item4 = new ProductDetails('4','Razer BlackShark V2 ', 1, '$99.99', 'Multi-platform wired esports headset','https://i.postimg.cc/tT96Rz8z/https-hybrismediaprod-blob-core-windows-net-sys-master-phoenix-images-container-hc0-hba-9081218236.jpg')
+
+let item5 = new ProductDetails('5','Razer Unleashed Zip Hoodie', 1, '$69.99', 'Everyday apparel thats bold in style and big on comfort', 'https://i.postimg.cc/qBDHJ5y1/razer-hoodie.jpg')
+
+let item6 = new ProductDetails('6','Razer Rogue 14 Backpack', 1, '$59.99','Lightweight all-weather toploader backpack', 'https://i.postimg.cc/HkdyhwbQ/razer-bag.jpg')
+
+
+//Pusing objects into array
 products.push(item1, item2, item3, item4, item5, item6)
 
+//Storing objects into local storage
 localStorage.setItem('products', JSON.stringify(products))
 
 
-let adminTable = document.getElementById('adminTable')
+//Setting table element to a variable
+let adminTable = document.querySelector('[data-adminTable]')
 
+
+//Function to display product details in a table on the admin page
 function displayProductAdmin() {
-    let dAProducts = products.map(function(item, index) {
+    let dPAdmin = products.map(function(item, index) {
 
         return `
         
         <tr>
-        <td>${item.name}</td>
-        <td>${item.quantity}</td>
-        <td>R${item.price}</td>
-        
+        <td style = "color: #44d62c">${item.name}</td>
+        <td style = "color: #44d62c">${item.description}</td>
+        <td style = "color: #44d62c">${item.price}</td>
+        <td><button class = "addButton">Add</button></td>
+        <td><button class = "delButton">Delete</button></td> 
         </tr>
         
         
         `
 
-    })
-    dAProducts.innerHTML.join('')
+    }) 
+    adminTable.innerHTML = dPAdmin.join('')
 }
+displayProductAdmin()
 
-productTable.style.color = 'white';
