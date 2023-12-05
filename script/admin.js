@@ -59,3 +59,23 @@ function displayProductAdmin() {
 }
 displayProductAdmin()
 
+
+function remove(position){
+    products.splice(position, 1)
+
+}
+
+function favorite(){
+    localStorage.setItem('products',JSON.stringify(products))
+    //sets the array from local storage to the array(items) in code
+    products = JSON.parse(localStorage.getItem('products'))
+}
+
+let adminDeleteButton = document.getElementById('admin-delete-button')
+
+adminDeleteButton.addEventListener('click', function(){
+    if(event.target.id.contains('admin-delete-button')){
+        remove(event.target.value)
+     
+    }
+})
