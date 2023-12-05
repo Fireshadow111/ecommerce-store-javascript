@@ -32,10 +32,9 @@ productsTable.innerHTML = dProducts.join('')
 displayProducts()  
 
 
+
+
 let productsSortButton = document.getElementById('products-sort-button')
-
-
-
 
 
 productsSortButton.addEventListener('click', function() {
@@ -50,5 +49,31 @@ productsSortButton.addEventListener('click', function() {
             return 0; 
         }
     });
+
+    displayProducts()
+
 });
 
+
+
+let productsSearchButton = document.getElementById('products-search-button')
+
+ 
+function searchProducts() {
+    let userInput = document.getElementById('products-search-input').value.trim().toUpperCase();
+    
+    // Filter items based on user input
+    let filteredItems = products.filter(item => item.name.toUpperCase().includes(userInput));
+
+    if (filteredItems.length > 0) {
+        // If items are found, display only those items
+        displayFilteredProducts(filteredItems);
+        alert("Item(s) was found");
+    } else {
+        // If no items are found, show an alert message
+        alert("Product was not found");
+    }
+}
+
+// Event listener for the Search button
+productsSearchButton.addEventListener('click', searchProducts);
