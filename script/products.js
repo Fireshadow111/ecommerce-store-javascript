@@ -29,10 +29,26 @@ function displayProducts() {
 productsTable.innerHTML = dProducts.join('')
 
 }
-displayProducts()
+displayProducts()  
+
+
+let productsSortButton = document.getElementById('products-sort-button')
 
 
 
 
 
+productsSortButton.addEventListener('click', function() {
+    products.sort(function(a, b) {
+        let price1 = a.price;
+        let price2 = b.price;
+        if (price1 < price2) {
+            return -1; 
+        } else if (price1 > price2) {
+            return 1; 
+        } else {
+            return 0; 
+        }
+    });
+});
 
