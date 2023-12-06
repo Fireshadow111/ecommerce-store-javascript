@@ -47,7 +47,7 @@ function displayProductAdmin() {
         <td style = "color: #44d62c; padding-top: 110px">${item.name}</td>
         <td style = "color: #44d62c; padding-top: 110px">${item.description}</td>
         <td style = "color: #44d62c; padding-top: 110px">${item.price}</td>
-        <td><button style = "margin-top: 95px" id = "admin-add-button">Add</button></td>
+        <td><button style = "margin-top: 95px" id = "admin-edit-button">Edit</button></td>
         <td><button style = "margin-top: 95px" id = "admin-del-button">Delete</button></td> 
         </tr>
         
@@ -60,22 +60,80 @@ function displayProductAdmin() {
 displayProductAdmin()
 
 
+
+
+//Delete button
+function setting(){
+    localStorage.setItem('products',JSON.stringify(products))
+    products = JSON.parse(localStorage.getItem('products'))
+}
+
+
 function remove(position){
     products.splice(position, 1)
 
 }
 
-function favorite(){
-    localStorage.setItem('products',JSON.stringify(products))
-    //sets the array from local storage to the array(items) in code
-    products = JSON.parse(localStorage.getItem('products'))
+let adminDeleteButton = document.getElementById('admin-del-button')
+
+
+adminTable.addEventListener('click', function(event) {
+    if (event.target.id.includes('admin-del-button')) {
+        let position = event.target.value;
+        remove(position);
+        setting();
+        displayProductAdmin();
+    }
+});
+
+
+
+
+// Function to handle the "Add" button click
+function handleAddButtonClick() {
+    // For demonstration purposes, you can prompt the user for new product details
+    const name = prompt("Enter the product name:");
+    const quantity = parseInt(prompt("Enter the product quantity:"));
+    const price = prompt("Enter the product price:");
+    const description = prompt("Enter the product description:");
+    const url = prompt("Enter the product image URL:");
+
+    // Validate the input
+    if (name && !isNaN(quantity) && price && description && url) {
+        // Call the addProduct function with the provided values for admin page
+        addProductToAdmin(name, quantity, price, description, url);
+
+        // Call the addProduct function with the provided values for product page
+        addProductToProducts(name, quantity, price, description, url);
+    } else {
+        alert("Invalid input. Please provide all required information.");
+    }
 }
 
-let adminDeleteButton = document.getElementById('admin-delete-button')
+// Function to add a new product to the admin page
+function addProductToAdmin(name, quantity, price, description, url) {
+    // Create a new ProductDetails object
+    const newItem = new ProductDetails(products.length + 1, name, quantity, price, description, url);
 
-adminDeleteButton.addEventListener('click', function(){
-    if(event.target.id.contains('admin-delete-button')){
-        remove(event.target.value)
-     
-    }
-})
+    // Add the new item to the products array
+    products.push(newItem);
+
+    // Update local storage
+    setting();
+
+    // Display the updated products on the admin page
+    displayProductAdmin();
+}
+
+// Function to add a new product to the products page
+function addProductToProducts(name, quantity, price, description, url) {
+    // Assume you have a similar display function for the products page, let's call it displayProducts
+    // This function should be responsible for updating the product page with the new item
+    // For example, you can call displayProducts() here to refresh the products on the product page
+    // displayProducts();
+}
+
+// Event listener for the "Add" button in the admin page
+let adminAddButton = document.getElementById('admin-add-button');
+
+adminAddButton.addEventListener('click', handleAddButtonClick);
