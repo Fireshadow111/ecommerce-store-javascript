@@ -426,3 +426,64 @@ color: var(--razerGreen);
 border-color: white;
 }
 
+#modal-i{
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+#modal-pn{
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+
+#modal-d{
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+#modal-p{
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+
+#admin-button-save{
+  width: 100px;
+height: 40px;
+color: black;
+font-family: "Roboto";
+font-size: 18px;
+font-weight: bold;
+background-color: var(--razerGreen);
+border: solid 3px black;
+border-radius: 50px;
+cursor: pointer;
+transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-button-save:hover{
+  background-color: black;
+color: var(--razerGreen);
+border-color: white;
+}
+
+#admin-button-close{
+  width: 100px;
+height: 40px;
+color: black;
+font-family: "Roboto";
+font-size: 18px;
+font-weight: bold;
+background-color: var(--razerGreen);
+border: solid 3px black;
+border-radius: 50px;
+cursor: pointer;
+transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-button-close:hover{
+  background-color: black;
+color: var(--razerGreen);
+border-color: white;
+}
