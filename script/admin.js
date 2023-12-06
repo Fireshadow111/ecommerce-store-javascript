@@ -17,12 +17,12 @@ let item1 = new ProductDetails('1','Razer Blade 15', 1, '$2499.99', 'NVIDIA® Ge
 
 let item2 = new ProductDetails('2','Razer Viper V2', 1, '$149.99', 'Ultra-lightweight, Ultra-fast Wireless Esports Mouse','https://i.postimg.cc/g2nV9ndM/razer-mouse.jpg')
 
-let item3 = new ProductDetails('3','Razer BlackWidow Pro', 1, '$229.99', 'Mechanical Gaming Keyboard with Razer Chroma™ RGB', 'https://i.postimg.cc/QdpzT4KG/razer-keyboard.jpg' )
-let item4 = new ProductDetails('4','Razer BlackShark V2 ', 1, '$99.99', 'Multi-platform wired esports headset','https://i.postimg.cc/tT96Rz8z/https-hybrismediaprod-blob-core-windows-net-sys-master-phoenix-images-container-hc0-hba-9081218236.jpg')
+let item3 = new ProductDetails('3','BlackWidow Pro', 1, '$229.99', 'Mechanical Gaming Keyboard with Razer Chroma™ RGB', 'https://i.postimg.cc/QdpzT4KG/razer-keyboard.jpg' )
+let item4 = new ProductDetails('4','BlackShark V2 ', 1, '$99.99', 'Multi-platform wired esports headset','https://i.postimg.cc/tT96Rz8z/https-hybrismediaprod-blob-core-windows-net-sys-master-phoenix-images-container-hc0-hba-9081218236.jpg')
 
-let item5 = new ProductDetails('5','Razer Unleashed Zip Hoodie', 1, '$69.99', 'Everyday apparel thats bold in style and big on comfort', 'https://i.postimg.cc/qBDHJ5y1/razer-hoodie.jpg')
+let item5 = new ProductDetails('5','Unleashed Zip Hoodie', 1, '$69.99', 'Everyday apparel thats bold in style and big on comfort', 'https://i.postimg.cc/qBDHJ5y1/razer-hoodie.jpg')
 
-let item6 = new ProductDetails('6','Razer Rogue 14 Backpack', 1, '$59.99','Lightweight all-weather toploader backpack', 'https://i.postimg.cc/HkdyhwbQ/razer-bag.jpg')
+let item6 = new ProductDetails('6','Rogue 14 Backpack', 1, '$59.99','Lightweight all-weather toploader backpack', 'https://i.postimg.cc/HkdyhwbQ/razer-bag.jpg')
 
 
 //Pusing objects into array

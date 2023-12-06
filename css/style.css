@@ -180,6 +180,44 @@
   background-color: var(--razerGreen);
 }
 
+/* Checkout Page */
+
+#checkout-button{
+  width: 150px;
+    height: 50px;
+
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: bold;
+    
+    border-radius: 50px;
+    cursor: pointer;
+    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#checkout-button:hover{
+  background-color: black;
+  color: white;
+}
+
+#clear-button{
+  width: 150px;
+  height: 50px;
+
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#clear-button:hover{
+  background-color: white;
+  color: black;
+}
+
 
 
   /* About Page */
@@ -220,82 +258,7 @@
 }
 
 
- /* Admin */
-
- .admin-head{
-
-    background-color: black;
-    color: white;
-    border: 5px solid var(--razerGreen);
-    border-radius: 50px;
-    font-family: "Roboto";
-    font-size: 50px;
-    text-align: center;
-  }
  
-  #admin-add-button{
-    width: 100px;
-    height: 40px;
-    color: black;
-    font-family: "Roboto";
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--razerGreen);
-    border: solid 3px black;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-   }
-  
-   #admin-add-button:hover{
-    background-color: black;
-    color: var(--razerGreen);
-    border-color: white;
-   }
-
-
- #admin-edit-button{
-  width: 100px;
-  height: 40px;
-  color: black;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: bold;
-  background-color: var(--razerGreen);
-  border: solid 3px black;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
- }
-
- #admin-edit-button:hover{
-  background-color: black;
-  color: var(--razerGreen);
-  border-color: white;
- }
-
- 
- #admin-del-button{
-  width: 100px;
-  height: 40px;
-  margin-right: 5px;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: bold;
-  background-color: var(--razerGreen);
-  border: solid 3px black;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
- }
-
- #admin-del-button:hover{
-  background-color: black;
-  color: var(--razerGreen);
-  border-color: white;
- }
-
-
 
 
 /* Contact Page */
@@ -386,3 +349,80 @@ margin-right: 30px;
 .instagram-div{
 margin-right: 30px;
 }
+
+
+/* Admin */
+
+.admin-head{
+
+  background-color: black;
+  color: white;
+  border: 5px solid var(--razerGreen);
+  border-radius: 50px;
+  font-family: "Roboto";
+  font-size: 50px;
+  text-align: center;
+}
+
+#admin-add-button{
+  width: 100px;
+  height: 40px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+ }
+
+ #admin-add-button:hover{
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+ }
+
+
+#admin-edit-button{
+width: 100px;
+height: 40px;
+color: black;
+font-family: "Roboto";
+font-size: 18px;
+font-weight: bold;
+background-color: var(--razerGreen);
+border: solid 3px black;
+border-radius: 50px;
+cursor: pointer;
+transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-edit-button:hover{
+background-color: black;
+color: var(--razerGreen);
+border-color: white;
+}
+
+
+#admin-del-button{
+width: 100px;
+height: 40px;
+margin-right: 5px;
+font-family: "Roboto";
+font-size: 18px;
+font-weight: bold;
+background-color: var(--razerGreen);
+border: solid 3px black;
+border-radius: 50px;
+cursor: pointer;
+transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-del-button:hover{
+background-color: black;
+color: var(--razerGreen);
+border-color: white;
+}
+
