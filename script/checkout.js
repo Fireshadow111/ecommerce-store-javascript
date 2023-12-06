@@ -5,29 +5,38 @@ function displayCartItems() {
     // Get the checkout table element
     let checkoutTable = document.getElementById('checkoutTable-div');
 
-    // Clear existing content in the table
+    // Clear existing content in the checkout table
     checkoutTable.innerHTML = '';
 
+    // Iterate over cart items and display them in the checkout table
+    cartItems.forEach(function (item) {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.description}</td>
+            <td>${item.price}</td>
+        `;
+        checkoutTable.appendChild(row);
+    });
+}
 
-    
-// Get a reference to the clear button
-let clearButton = document.getElementById('clear-button');
+// Call the function to initially display cart items on the checkout page
+displayCartItems();
+
+
+
+
+function clearCheckout() {
+    // Clear the cart items in local storage
+    localStorage.removeItem('cart');
+
+    // Clear the content in the checkout table
+    let checkoutTable = document.getElementById('checkoutTable-div');
+    checkoutTable.innerHTML = '';
+}
 
 // Add an event listener to the clear button
-clearButton.addEventListener('click', function() {
-    // Clear the items in the checkout
-    clearCheckoutItems();
-});
+let clearButton = document.getElementById('clear-button');
+clearButton.addEventListener('click', clearCheckout);
 
-// Function to clear the items in the checkout
-function clearCheckoutItems() {
-    // Get a reference to the checkout table body
-    let checkoutTableBody = document.querySelector('#checkoutTable-div tbody');
-
-    // Clear the content of the table body
-    checkoutTableBody.innerHTML = '';
-
-    // Optionally, you can clear any stored data in local storage
-    localStorage.removeItem('purchased');
-}
-}
