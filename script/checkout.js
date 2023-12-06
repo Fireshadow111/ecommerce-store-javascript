@@ -8,17 +8,8 @@ function displayCartItems() {
     // Clear existing content in the table
     checkoutTable.innerHTML = '';
 
-   
 
-
-
-
-
-
-
-
-
-
+    
 // Get a reference to the clear button
 let clearButton = document.getElementById('clear-button');
 
