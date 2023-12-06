@@ -130,5 +130,61 @@ else{
 
 
 
+function initializeCartStorage() {
+    // Check if the cart already exists in local storage
+    if (!localStorage.getItem('cart')) {
+        // If not, create an empty cart and set it in local storage
+        localStorage.setItem('cart', JSON.stringify([]));
+    }
+}
+
+// Call the function to initialize the cart in local storage
+initializeCartStorage();
+
+
+// Function to add item to the cart
+function addToCart(index) {
+    // Retrieve cart items from local storage or initialize an empty array
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Get the selected product from the products array
+    let selectedProduct = products[index];
+
+    // Check if the item is already in the cart
+    let existingItem = cartItems.find(item => item.id === selectedProduct.id);
+
+    if (existingItem) {
+        // If the item is already in the cart, update its quantity
+        existingItem.quantity += 1;
+    } else {
+        // If the item is not in the cart, add it
+        let cartItem = {
+            id: selectedProduct.id,
+            name: selectedProduct.name,
+            quantity: 1,
+            price: selectedProduct.price,
+        };
+        cartItems.push(cartItem);
+    }
+
+    // Update the cart in local storage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    // Display the updated cart items on the checkout page
+    displayCartItems();
+}
+
+// Assuming you have buttons with the class "products-add-cart-button" in your product display
+let addCartButtons = document.querySelectorAll('#products-add-cart-button');
+
+addCartButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        addToCart(index);
+    });
+});
+
+
+
+
 
 

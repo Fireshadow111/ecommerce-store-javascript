@@ -16,7 +16,7 @@ let item1 = new ProductDetails('1', 'Razer Blade 15', 1, '$2499.99', 'NVIDIA® G
 let item2 = new ProductDetails('2', 'Razer Viper V2', 1, '$149.99', 'Ultra-lightweight, Ultra-fast Wireless Esports Mouse', 'https://i.postimg.cc/g2nV9ndM/razer-mouse.jpg');
 let item3 = new ProductDetails('3', 'BlackWidow Pro', 1, '$229.99', 'Mechanical Gaming Keyboard with Razer Chroma™ RGB', 'https://i.postimg.cc/QdpzT4KG/razer-keyboard.jpg');
 let item4 = new ProductDetails('4', 'BlackShark V2 ', 1, '$99.99', 'Multi-platform wired esports headset', 'https://i.postimg.cc/tT96Rz8z/https-hybrismediaprod-blob-core-windows-net-sys-master-phoenix-images-container-hc0-hba-9081218236.jpg');
-let item5 = new ProductDetails('5', 'Unleashed Zip Hoodie', 1, '$69.99', 'Everyday apparel that\'s bold in style and big on comfort', 'https://i.postimg.cc/qBDHJ5y1/razer-hoodie.jpg');
+let item5 = new ProductDetails('5', 'Unleashed Zip Hoodie', 1, '$69.99', 'Everyday apparel thats bold in style and big on comfort', 'https://i.postimg.cc/qBDHJ5y1/razer-hoodie.jpg');
 let item6 = new ProductDetails('6', 'Rogue 14 Backpack', 1, '$59.99', 'Lightweight all-weather toploader backpack', 'https://i.postimg.cc/HkdyhwbQ/razer-bag.jpg');
 
 //Pushing the objects into the array "products"
@@ -122,67 +122,68 @@ adminTable.addEventListener('click', function(event) {
 // adminAddButton.addEventListener('click', addButtonAdmin);
 
 
-let addButton = document.getElementById('admin-add-button');
-addButton.addEventListener('click',function(){
- let addNew = document.getElementById('modal-display');
- addNew.innerHTML = `
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p id= "modal-i">Image URL:</p>
-        <input id="url" display = text class="form-control"></input>
-        <p id= "modal-pn">Product Name:</p>
-        <input id="pName" display = text class="form-control"></input>
-        <p id= "modal-d">Description</p>
-        <input id="des" display = text class="form-control"></input>
-        <p id= "modal-p">Price</p>
-        <input id="price" display = text class="form-control"></input>
-      </div>
-      <div class="modal-footer">
-        <button id= "admin-button-save" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save</button>
-        <button id= "admin-button-close" type="button" class="btn btn-primary">Close</button>
-      </div>
-    </div>
-  `;
-})
+// let addButton = document.getElementById('admin-add-button');
+// addButton.addEventListener('click',function(){
+//  let addNew = document.getElementById('modal-display');
+//  addNew.innerHTML = `
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//       </div>
+//       <div class="modal-body">
+//         <p id= "modal-i">Image URL:</p>
+//         <input id="url" display = text class="form-control"></input>
+//         <p id= "modal-pn">Product Name:</p>
+//         <input id="pName" display = text class="form-control"></input>
+//         <p id= "modal-d">Description</p>
+//         <input id="des" display = text class="form-control"></input>
+//         <p id= "modal-p">Price</p>
+//         <input id="price" display = text class="form-control"></input>
+//       </div>
+//       <div class="modal-footer">
+//         <button id= "admin-button-save" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save</button>
+//         <button id= "admin-button-close" type="button" class="btn btn-primary">Close</button>
+//       </div>
+//     </div>
+//   `;
+// })
 
-function modalDisplay(){
-    let url = document.getElementById('url').value;
-    let name = document.getElementById('pName').value;
-    let description = document.getElementById('des').value;
-    let price = document.getElementById('price').value;
+// function modalDisplay(){
+//     let url = document.getElementById('url').value;
+//     let name = document.getElementById('pName').value;
+//     let description = document.getElementById('des').value;
+//     let price = document.getElementById('price').value;
 
 
-    if (name && !isNaN && price && description && url) {
-           // Call the addProduct function with the provided values for admin page
-              AddProductAdmin(url,name, description, price );
+//     if (name && !isNaN && price && description && url) {
+//            // Call the addProduct function with the provided values for admin page
+//               AddProductAdmin(url,name, description, price );
         
-            // Call the addProduct function with the provided values for product page
-             AddProductProducts(url,name, description, price );;
-            } else {
-                // Alert the user about invalid input
-            alert("Invalid input");
-            }
-         }
+//             // Call the addProduct function with the provided values for product page
+//              AddProductProducts(url,name, description, price );;
+//             } else {
+//                 // Alert the user about invalid input
+//             alert("Invalid input");
+//             }
+//          }
 
 
 
-         function AddProductAdmin(url, name, description, price,) {
-                // Creating an object
-                let newProduct = new ProductDetails(products.length + 1, url, name, description, price,);
+//          function AddProductAdmin(url, name, description, price,) {
+//                 // Creating an object
+//                 let newProduct = new ProductDetails(products.length + 1, url, name, description, price,);
             
-                // Adding the new item to the products array
-                products.push(newProduct);
+//                 // Adding the new item to the products array
+//                 products.push(newProduct);
             
-                 // Updating local storage
-                 setting();
+//                  // Updating local storage
+//                  setting();
             
-                // Displaying the updated products on the admin page
-                displayProductAdmin();
-            }
+//                 // Displaying the updated products on the admin page
+//                 displayProductAdmin();
+//             }
             
-             let adminAddButton = document.getElementById('admin-button-save');
+//              let adminAddButton = document.getElementById('admin-button-save');
             
-             adminAddButton.addEventListener('click', modalDisplay);
+//              adminAddButton.addEventListener('click', modalDisplay);
+
