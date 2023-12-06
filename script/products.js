@@ -56,24 +56,20 @@ productsSortButton.addEventListener('click', function() {
 
 
 
-let productsSearchButton = document.getElementById('products-search-button')
 
- 
+let productsSearchButton = document.getElementById('products-search-button')
+let input = document.getElementById('products-search-input').value.toLowerCase()
+
 function searchProducts() {
-    let userInput = document.getElementById('products-search-input').value.trim().toUpperCase();
-    
-    // Filter items based on user input
-    let filteredItems = products.filter(item => item.name.toUpperCase().includes(userInput));
+
+    let filteredItems = products.filter(item.name.toLowerCase().includes(input));
 
     if (filteredItems.length > 0) {
-        // If items are found, display only those items
-        displayFilteredProducts(filteredItems);
-        alert("Item(s) was found");
+     displayProducts(filteredItems);
     } else {
-        // If no items are found, show an alert message
+
         alert("Product was not found");
     }
 }
 
-// Event listener for the Search button
 productsSearchButton.addEventListener('click', searchProducts);
