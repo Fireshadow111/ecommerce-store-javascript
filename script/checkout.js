@@ -34,9 +34,39 @@ function clearCheckout() {
     // Clear the content in the checkout table
     let checkoutTable = document.getElementById('checkoutTable-div');
     checkoutTable.innerHTML = '';
+
+    // Clear the total in the input tag
+    document.getElementById('cart-total').value = '';
 }
 
 // Add an event listener to the clear button
 let clearButton = document.getElementById('clear-button');
 clearButton.addEventListener('click', clearCheckout);
 
+
+
+
+// Function to update the total and display it in the input tag
+function updateTotal() {
+    // Retrieve cart items from local storage
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Calculate the total
+    let total = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')) * item.quantity, 0);
+
+    // Display the total in the input tag
+    document.getElementById('cart-total').value = total.toFixed(2); // Assuming 'cart-total' is the ID of your input tag
+}
+
+displayCartItems();
+updateTotal();
+
+
+
+let checkoutButton = document.getElementById('checkout-button');
+
+checkoutButton.addEventListener('click', function() {
+
+   alert('Thank you for your purchase')
+
+})

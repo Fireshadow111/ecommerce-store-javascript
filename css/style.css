@@ -78,6 +78,11 @@
     border-color: white;
   
   }
+
+  .home-button:active{
+    box-shadow: 0 5px #666;
+  transform: translatex(4px);
+  }
   
   
   #footer{
@@ -125,6 +130,12 @@
     background-color: black;
   color: var(--razerGreen);
   border-color: white;
+  
+  }
+
+  #products-add-cart-button:active{
+    box-shadow: 0 5px #666;
+  transform: translatex(4px);
   }
 
   #product-cards{
@@ -132,8 +143,8 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    
   }
-
 
   #products-search-button{
     width: 150px;
@@ -153,6 +164,11 @@
     background-color: black;
     color: var(--razerGreen);
     border-color: white;
+  }
+
+  #products-search-button:active{
+    box-shadow: 0 5px #666;
+  transform: translatex(4px);
   }
 
   #products-sort-button{
@@ -175,6 +191,10 @@
     border-color: white;
   }
 
+  #products-sort-button:active{
+    box-shadow: 0 5px #666;
+  transform: translatex(4px);
+  }
 
 .card{
   background-color: var(--razerGreen);
@@ -200,6 +220,11 @@
   color: white;
 }
 
+#checkout-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
+
 #clear-button{
   width: 150px;
   height: 50px;
@@ -218,6 +243,23 @@
   color: black;
 }
 
+#clear-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
+
+
+#cart-total{
+  width: 300px;
+  height: 30px;
+}
+
+#total{
+  color: var(--razerGreen);
+  margin-top: 8px;
+  margin-right: 10px;
+  font-weight: bold;
+}
 
 
   /* About Page */
@@ -313,7 +355,7 @@ font-family: "Roboto";
 font-size: 22px;
 font-weight: bold;
 background-color: var(--razerGreen);
-border-color: black;
+border: solid 3px black;
 border-radius: 50px;
 cursor: pointer;
 transition: border-color 0.5s, background-color 0.5s, color 0.5s;
@@ -325,6 +367,10 @@ color: var(--razerGreen);
 border-color: white;
 }
 
+input[type=submit]:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
 
 .icons{
 display: flex;
@@ -384,6 +430,36 @@ margin-right: 30px;
   border-color: white;
  }
 
+ #admin-add-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
+
+ #admin-sort-button{
+  width: 100px;
+  height: 40px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+ }
+
+ #admin-sort-button:hover{
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+ }
+
+ #admin-sort-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
+
 
 #admin-edit-button{
 width: 100px;
@@ -405,6 +481,10 @@ color: var(--razerGreen);
 border-color: white;
 }
 
+#admin-edit-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
 
 #admin-del-button{
 width: 100px;
@@ -424,6 +504,11 @@ transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 background-color: black;
 color: var(--razerGreen);
 border-color: white;
+}
+
+#admin-del-button:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
 }
 
 #modal-i{
@@ -468,6 +553,11 @@ color: var(--razerGreen);
 border-color: white;
 }
 
+#admin-button-save:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
+
 #admin-button-close{
   width: 100px;
 height: 40px;
@@ -488,6 +578,10 @@ color: var(--razerGreen);
 border-color: white;
 }
 
+#admin-button-close:active{
+  box-shadow: 0 5px #666;
+transform: translatex(4px);
+}
 
 
 
