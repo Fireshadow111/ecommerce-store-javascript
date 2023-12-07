@@ -130,16 +130,12 @@ else{
 
 
 
-function initializeCartStorage() {
-    // Check if the cart already exists in local storage
-    if (!localStorage.getItem('cart')) {
-        // If not, create an empty cart and set it in local storage
-        localStorage.setItem('cart', JSON.stringify([]));
-    }
-}
 
-// Call the function to initialize the cart in local storage
-initializeCartStorage();
+
+
+
+
+
 
 
 // Function to add item to the cart
@@ -148,21 +144,22 @@ function addToCart(index) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Get the selected product from the products array
-    let selectedProduct = products[index];
+    let chosenProduct = products[index];
 
     // Check if the item is already in the cart
-    let existingItem = cartItems.find(item => item.id === selectedProduct.id);
+    let existingItemIndex = cartItems.findIndex(item => item.id === chosenProduct.id);
 
-    if (existingItem) {
+    if (existingItemIndex !== -1) {
         // If the item is already in the cart, update its quantity
-        existingItem.quantity += 1;
+        cartItems[existingItemIndex].quantity += 1;
     } else {
         // If the item is not in the cart, add it
         let cartItem = {
-            id: selectedProduct.id,
-            name: selectedProduct.name,
+            id: chosenProduct.id,
+            name: chosenProduct.name,
             quantity: 1,
-            price: selectedProduct.price,
+            price: chosenProduct.price,
+            description: chosenProduct.description
         };
         cartItems.push(cartItem);
     }
@@ -182,9 +179,4 @@ addCartButtons.forEach((button, index) => {
         addToCart(index);
     });
 });
-
-
-
-
-
 
