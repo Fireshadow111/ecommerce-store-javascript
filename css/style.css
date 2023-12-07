@@ -487,3 +487,182 @@ transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 color: var(--razerGreen);
 border-color: white;
 }
+
+
+
+
+
+
+/* Home Page */
+
+@media (max-width: 300px) {
+  body {
+    font-size: 14px; 
+  }
+
+  .navbar {
+    padding: 5px; 
+  }
+
+ 
+  #back-image {
+    background-image: none;
+  }
+}
+
+
+
+
+@media (max-width: 720px) {
+  body {
+    font-size: 16px; 
+  }
+
+  .navbar {
+    padding: 10px; 
+  }
+
+  
+
+  #footer {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+@media (max-width: 1080px) {
+  body {
+    font-size: 18px; 
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+
+  #footer {
+    margin-top: 30px;
+  }
+}
+
+
+/* Products Page */
+
+
+@media (max-width: 300px) {
+  #products-add-cart-button{
+    width: 130px;
+    height: 60px;
+  }
+  
+}
+
+
+@media (max-width: 720px) {
+  #products-add-cart-button{
+    width: 130px;
+    height: 60px;
+  }
+  
+  
+}
+
+
+@media (max-width: 1080px) {
+  #products-add-cart-button{
+    width: 130px;
+    height: 60px;
+  }
+
+}
+
+
+
+
+/* Contact Page */
+
+@media (max-width: 300px) {
+  .navbar {
+    padding: 5px;
+  }
+
+  .home-logo {
+    max-width: 100%;
+  }
+
+  .contact-head {
+    font-size: 30px;
+  }
+
+  .contactForm-div {
+    width: 90%;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input[type=text], textarea {
+    font-size: 14px;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+  }
+
+  .fa-brands {
+    margin-bottom: 10px;
+  }
+
+  #footer {
+    margin-top: 10px;
+  }
+}
+
+
+
+
+/* Admin Page */
+
+@media (max-width: 300px) {
+  body {
+      font-size: 12px; 
+  }
+
+  .container-fluid {
+      max-width: 300px; 
+  }
+
+}
+
+@media (max-width: 720px) {
+  body {
+      font-size: 14px; 
+  }
+
+  .container-fluid {
+      max-width: 720px; 
+  }
+
+ 
+}
+
+@media (max-width: 1080px) {
+  body {
+      font-size: 116px; 
+  }
+
+  .container-fluid {
+      max-width: 1080px; 
+  }
+
+ 
+}
