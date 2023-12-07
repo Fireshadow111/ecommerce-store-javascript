@@ -1,68 +1,78 @@
+// function to display products on checkout page
 function displayCartItems() {
-    // Retrieve cart items from local storage
+    // getting products from the "cart" array in local storage or creating a empty array
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Get the checkout table element
+    
     let checkoutTable = document.getElementById('checkoutTable-div');
 
-    // Clear existing content in the checkout table
+    // clearing products in the checkout table
     checkoutTable.innerHTML = '';
 
-    // Iterate over cart items and display them in the checkout table
+    // looping through all the products using "forEach" and then displaying them on the checkout
     cartItems.forEach(function (item) {
-        let row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${item.name}</td>
-            <td>${item.quantity}</td>
-            <td>${item.description}</td>
-            <td>${item.price}</td>
+        checkoutTable.innerHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.quantity}</td>
+                <td>${item.description}</td>
+                <td>${item.price}</td>
+            </tr>
         `;
-        checkoutTable.appendChild(row);
     });
 }
-
-// Call the function to initially display cart items on the checkout page
 displayCartItems();
 
 
 
-
+// function to clear items in the "cart" array and reset it
 function clearCheckout() {
-    // Clear the cart items in local storage
+    // clearing the products from the "cart" array in local storage
     localStorage.removeItem('cart');
 
-    // Clear the content in the checkout table
     let checkoutTable = document.getElementById('checkoutTable-div');
+
+    // clearing the products in the table
     checkoutTable.innerHTML = '';
 
-    // Clear the total in the input tag
-    document.getElementById('cart-total').value = '';
+    let cartTotal = document.getElementById('cart-total');
+
+    // clearing the total input tag
+    cartTotal.value = '';
 }
 
-// Add an event listener to the clear button
 let clearButton = document.getElementById('clear-button');
+
 clearButton.addEventListener('click', clearCheckout);
 
 
 
-
-// Function to update the total and display it in the input tag
-function updateTotal() {
-    // Retrieve cart items from local storage
+// function to calculate the total price
+function calculateTotal() {
+    // getting products from the "cart" array in local storage or creating a empty array
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // setting the total cost to 0
+    let totalCost = 0;
 
-    // Calculate the total
-    let total = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace('$', '')) * item.quantity, 0);
+    // looping through the products in the array, if the cart products are less than i, then i + 1
+    for (let i = 0; i < cartItems.length; i++) {
+        // parseing the price, removing the "$" and coverting it to a string without the "$" and then muiltiplying by the quantity
+        let productsTotal = parseFloat(cartItems[i].price.replace('$', '')) * cartItems[i].quantity;
 
-    // Display the total in the input tag
-    document.getElementById('cart-total').value = total.toFixed(2); // Assuming 'cart-total' is the ID of your input tag
+        // letting the total cost = 0 plus the price of the product
+        totalCost = totalCost + productsTotal;
+    }
+
+    // displaying the total cost in the input tag to 2 decimal places using "toFixed"
+    document.getElementById('cart-total').value = `$${totalCost.toFixed(2)}`;
 }
-
 displayCartItems();
-updateTotal();
+calculateTotal();
 
 
 
+
+//adding an messege when the checkout button is clicked
 let checkoutButton = document.getElementById('checkout-button');
 
 checkoutButton.addEventListener('click', function() {
