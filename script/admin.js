@@ -28,7 +28,7 @@ localStorage.setItem('products', JSON.stringify(products));
 //Placing the table element into a variable
 let adminTable = document.querySelector('[data-adminTable]');
 
-//Function to display products on the admin page and to loop through all objects in the array
+//function to display products on the admin page and to loop through all objects in the array
 function displayProductAdmin() {
     let dPAdmin = products.map(function (item, index) {
         return `
@@ -51,7 +51,7 @@ displayProductAdmin();
 
 
 
-// creating a function to get product information from local storage
+// creating a function to get and set product information to and from local storage
 function setting() {
     localStorage.setItem('products', JSON.stringify(products));
     products = JSON.parse(localStorage.getItem('products'));
@@ -83,63 +83,77 @@ adminTable.addEventListener('click', function(event) {
 
 
 
-
-
+// Get the "Add" button element by its ID
 let addButton = document.getElementById('admin-add-button');
+
+// Add a click event listener to the "Add" button
 addButton.addEventListener('click', function () {
-    let addNew = document.getElementById('modal-display');
-    addNew.innerHTML = `
+    // Get the modal display element by its ID
+    let modalDisplay = document.getElementById('modal-display');
+
+    // Set the HTML content of the modal
+    modalDisplay.innerHTML = `
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p id= "modal-i">Image URL:</p>
-        <input id="url" display = text class="form-control"></input>
-        <p id= "modal-pn">Product Name:</p>
-        <input id="pName" display = text class="form-control"></input>
-        <p id= "modal-d">Description</p>
-        <input id="des" display = text class="form-control"></input>
-        <p id= "modal-p">Price</p>
-        <input id="price" display = text class="form-control"></input>
+        <p id="modal-i">Image URL:</p>
+        <input id="url" type="text" class="form-control">
+        <p id="modal-pn">Product Name:</p>
+        <input id="pName" type="text" class="form-control">
+        <p id="modal-d">Description</p>
+        <input id="des" type="text" class="form-control">
+        <p id="modal-p">Price</p>
+        <input id="price" type="text" class="form-control">
       </div>
       <div class="modal-footer">
-        <button id= "admin-button-save" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save</button>
-        <button id= "admin-button-close" type="button" class="btn btn-primary">Close</button>
+        <button id="admin-button-save" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save</button>
+        <button id="admin-button-close" type="button" class="btn btn-primary">Close</button>
       </div>
     </div>
   `;
 
-    let saveButton = document.getElementById('admin-button-save');
-    saveButton.addEventListener('click', function () {
-        // Retrieve values from the input fields
-        let imageUrl = document.getElementById('url').value;
-        let productName = document.getElementById('pName').value;
-        let description = document.getElementById('des').value;
-        let price = document.getElementById('price').value;
+  // Get the "Save" button element by its ID
+  let saveButton = document.getElementById('admin-button-save');
 
-        // Validate input
-        if (imageUrl && productName && description && price) {
-            // Create a new ProductDetails object
-            const newProduct = new ProductDetails(products.length + 1, productName, 1, `$${price}`, description, imageUrl);
-
-            // Add the new item to the products array
-            products.push(newProduct);
-
-            // Update local storage
-            localStorage.setItem('products', JSON.stringify(products));
-
-            // Display the updated products on the admin page
-            displayProductAdmin();
-
-        } else {
-            // Alert the user about invalid input
-            alert("Invalid input. Please provide all required information.");
-        }
-      
+  // Add a click event listener to the "Save" button
+  saveButton.addEventListener('click', function () {
+      // Retrieve values from the input fields
+      let url = document.getElementById('url').value;
+      let name = document.getElementById('pName').value;
+      let description = document.getElementById('des').value;
+      let price = document.getElementById('price').value;
+  
+      // Validate input
+      if (url && name && description && price) {
+          // Create a new product object
+          let newProduct = {
+              id: products.length + 1,
+              name: name,
+              quantity: 1,
+              price: `$${price}`,
+              description: description,
+              url: url
+          };
+  
+          // Add the new product to the products array
+          products.push(newProduct);
+  
+          // Update local storage with the modified products array
+          localStorage.setItem('products', JSON.stringify(products));
+  
+          // Display the updated products on the admin page
+          displayProductAdmin();
+      } else {
+          // Alert the user about invalid input
+          alert("Invalid input. Please fill in all fields.");
+      }
+  });
 });
-    });
-    
+
+
+
 
     // Change the button id to a class for the edit buttons
 let editButtons = document.querySelectorAll('#admin-edit-button');
@@ -201,7 +215,7 @@ function editModal(item, index) {
             eItem.hide();
         } else {
             // Alert the user about invalid input
-            alert("Invalid input. Please provide all required information.");
+            alert("Invalid input");
         }
     });
 }

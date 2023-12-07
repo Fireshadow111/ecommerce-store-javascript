@@ -65,7 +65,7 @@ productsSortButton.addEventListener('click', function() {
 let productsSearchButton = document.getElementById('products-search-button');
 
 productsSearchButton.addEventListener('click', function(event) {
-    // preventing the default order of the products from displaying 
+    // preventing the default layout of the products from overwriting the search result
     event.preventDefault();
     
     // allowing the search to except lowercase case inputs by the user
@@ -102,58 +102,54 @@ function displayFilteredProducts(filteredProducts) {
 
 
 
-//Spinner
-
-if (products.length === 0 ){
-    productsTable.innerHTML = `<div id="spinner" class="spinner-border text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>`
-}
-else{
-    let dProducts = products.map(function(item, index) {
+// checking if the "products" array is empty
+if (products.length === 0) {
+    // If the array is empty then the spinner will display
+    productsTable.innerHTML = `
+        <div id="spinner" class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    `;
+} else {
+    // if there are products in the array then loop through them and display them
+    let displayedProducts = products.map(function(item, index) {
         return `
-        <div class="col-md-4 my-5 d-flex justify-content-center">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="${item.url}" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 style="color: white; background-color: black;" class="card-title">${item.name}</h5>
-                    <p class="card-text" style="font-size: 17px; font-weight: bolder;"><i>${item.description}</i></p>
-                    <p class="card-text" style="font-size: 17px;">${item.price}</p>
-                    <button id="products-add-cart-button" class="btn btn-primary">Add to Cart</button>
+            <div class="col-md-4 my-5 d-flex justify-content-center">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="${item.url}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 style="color: white; background-color: black;" class="card-title">${item.name}</h5>
+                        <p class="card-text" style="font-size: 17px; font-weight: bolder;"><i>${item.description}</i></p>
+                        <p class="card-text" style="font-size: 17px;">${item.price}</p>
+                        <button id="products-add-cart-button" class="btn btn-primary">Add to Cart</button>
+                    </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
     });
 
-    productsTable.innerHTML = dProducts.join('');
+    // setting the innerHTML of the productsTable
+    productsTable.innerHTML = displayedProducts.join('');
 }
 
 
 
 
-
-
-
-
-
-
-
-// Function to add item to the cart
+// function to add products to the checkout page
 function addToCart(index) {
-    // Retrieve cart items from local storage or initialize an empty array
+    // get products items from local storage or initialize an empty array
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Get the selected product from the products array
+    // adding a variable to the "products" array
     let chosenProduct = products[index];
 
-    // Check if the item is already in the cart
-    let existingItemIndex = cartItems.findIndex(item => item.id === chosenProduct.id);
+    // checking if the product is already in the cart using "findIndex" to loop throught the indexs of the products
+    let itemIndex = cartItems.findIndex(item => item.id === chosenProduct.id);
 
-    if (existingItemIndex !== -1) {
-        // If the item is already in the cart, update its quantity
-        cartItems[existingItemIndex].quantity += 1;
+    // if the index is already in the cart then its quantity will be updated
+    if (itemIndex !== -1) {
+        cartItems[itemIndex].quantity += 1;
     } else {
-        // If the item is not in the cart, add it
+        // creating an object 
         let cartItem = {
             id: chosenProduct.id,
             name: chosenProduct.name,
@@ -161,22 +157,23 @@ function addToCart(index) {
             price: chosenProduct.price,
             description: chosenProduct.description
         };
+        //pushing the object into an array
         cartItems.push(cartItem);
     }
 
-    // Update the cart in local storage
+    //setting the "cart" array in local storage
     localStorage.setItem('cart', JSON.stringify(cartItems));
 
-    // Display the updated cart items on the checkout page
+    // display the updated cart products on the checkout page
     displayCartItems();
 }
 
-// Assuming you have buttons with the class "products-add-cart-button" in your product display
 let addCartButtons = document.querySelectorAll('#products-add-cart-button');
 
+// adding an event listener to every "add to cart" button using "forEach"
 addCartButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
+       //calling the function with the index of the button clicked
         addToCart(index);
     });
 });
-
