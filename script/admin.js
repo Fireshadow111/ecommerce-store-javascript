@@ -113,7 +113,7 @@ adminSortButton.addEventListener('click', function() {
 
 
 
-
+// creating a function to add new products into the "products" array 
 let addButton = document.getElementById('admin-add-button');
 
 addButton.addEventListener('click', function () {
@@ -168,7 +168,8 @@ addButton.addEventListener('click', function () {
   
           // updating local storage with the newly created products 
           localStorage.setItem('products', JSON.stringify(products));
-  
+          
+          //calling this function to display the updated array with the added products
           displayProductAdmin();
       } else {
           // An alert if the user does not fill in all the input tags
@@ -178,8 +179,9 @@ addButton.addEventListener('click', function () {
 });
 
 
-
-// Adding an edit button to edit products uding item as a prarameter to access the products in the array and index to access the position of the products in the arra
+//Adding an edit button to edit products
+let editButtons = document.querySelectorAll('#admin-edit-button');
+//  uding item as a prarameter to access the products in the array and index to access the position of the products in the arra
 function editProduct(item, index) {
     
     let modalDisplay = document.getElementById('modal-display');
@@ -221,22 +223,22 @@ function editProduct(item, index) {
             // accessing the the items in the"products" array by its index to ensure that the correct product information is returned
             products[index].name = name;
             products[index].description = description;
-            // using backticks to add the dollar sign before the price
+            // using backticks so that the dollar sign will display before the price
             products[index].price = `$${price}`;
             products[index].url = url;
-            // Updating my local storage with the updated version of the products
+            // Updating my local storage with the updated information of the products
             localStorage.setItem('products', JSON.stringify(products));
     
+            //calling this function to display the updated array with the replaced product information
             displayProductAdmin();
         }
     });
 }
 
-let editButtons = document.querySelectorAll('#admin-edit-button');
 // Using "forEach" to allow me to add the event listener to all the edit buttons without having make an event listener for each individual button
 editButtons.forEach((editButton, index) => {
     editButton.addEventListener('click', () => {
-        // calling the function and accessing the products array by 
+        // calling the function and accessing the product where the edit button is clicked via its index, and accessing the product in the array via its index
         editProduct(products[index], index);
     });
 });
