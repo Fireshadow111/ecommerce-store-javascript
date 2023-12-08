@@ -162,6 +162,9 @@ addCartButtons.forEach((button, index) => {
   });
 });
 
+
+
+
 // Error Handling
 
 try {
