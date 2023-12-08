@@ -57,12 +57,10 @@ function setting() {
     products = JSON.parse(localStorage.getItem('products'));
 }
 
-// Function to remove a product from the array
-function remove(position) {
-    products.splice(position, 1);
+// Function to delete a product from the array based on its position in the array
+function remove(index) {
+    products.splice(index, 1);
 }
-
-
 
 let adminDeleteButton = document.getElementById('admin-del-button');
 
@@ -70,28 +68,59 @@ adminTable.addEventListener('click', function(event) {
     // checking if the button has an id of "admin-del-button"
     if (event.target.id.includes('admin-del-button')) {
         // assigning the event a variable and getting the position from the buttons value attribute
-        let position = event.target.value;
+        let index = event.target.value;
+
+        // deleting the product based on it position in the array
+         remove(index);
         
-        remove(position);
-        // Saving the updated position to local storage
+        // calling the function to get the updated version of the array with the deleted products
         setting();
         
-        // Display the updated products on the admin page
         displayProductAdmin();
     }
 });
 
 
 
-// Get the "Add" button element by its ID
+
+
+let adminSortButton = document.getElementById('admin-sort-button');
+
+adminSortButton.addEventListener('click', function() {
+    // Creating a function to sort products from cheapest to most expensive
+    products.sort(function(a, b) {
+        // removing the dollar sign from the prices so that the numbers can be compared properly
+        let price1 = parseFloat(a.price.replace('$', ''));
+        let price2 = parseFloat(b.price.replace('$', ''));
+
+        if (price1 < price2) {
+            // if price1 is less than price 2 then return -1, a should be shown first if -1 is returned
+            return -1;
+        } else if (price1 > price2) {
+            // if price1 is more than price 2 then return 1, b should be shown first if 1 is returned
+            return 1;
+        } else {
+            // If price1 and price2 are equal then there will not be a change
+            return 0;
+        }
+    });
+
+    // calling the function to display the products on the admin page
+    displayProductAdmin();
+});
+
+
+
+
+
+
 let addButton = document.getElementById('admin-add-button');
 
-// Add a click event listener to the "Add" button
 addButton.addEventListener('click', function () {
-    // Get the modal display element by its ID
+
     let modalDisplay = document.getElementById('modal-display');
 
-    // Set the HTML content of the modal
+    // creating the html for the modal and sending it to the position of the id "modalDisplay"
     modalDisplay.innerHTML = `
     <div class="modal-content">
       <div class="modal-header">
@@ -114,21 +143,18 @@ addButton.addEventListener('click', function () {
     </div>
   `;
 
-  // Get the "Save" button element by its ID
+  // Creating a save button so that the products added can be saved to local storage "products"
   let saveButton = document.getElementById('admin-button-save');
-
-  // Add a click event listener to the "Save" button
   saveButton.addEventListener('click', function () {
-      // Retrieve values from the input fields
-      let url = document.getElementById('url').value;
       let name = document.getElementById('pName').value;
       let description = document.getElementById('des').value;
       let price = document.getElementById('price').value;
+      let url = document.getElementById('url').value;
   
-      // Validate input
-      if (url && name && description && price) {
-          // Create a new product object
-          let newProduct = {
+      // Validation to ensure that that all the input tags have information inside of them
+      if (name && description && price && url) {
+          // Creating a new product object
+          let updatedProduct = {
               id: products.length + 1,
               name: name,
               quantity: 1,
@@ -137,115 +163,100 @@ addButton.addEventListener('click', function () {
               url: url
           };
   
-          // Add the new product to the products array
-          products.push(newProduct);
+          // Adding the updated products to the products array in local storage
+          products.push(updatedProduct);
   
-          // Update local storage with the modified products array
+          // updating local storage with the newly created products 
           localStorage.setItem('products', JSON.stringify(products));
   
-          // Display the updated products on the admin page
           displayProductAdmin();
       } else {
-          // Alert the user about invalid input
-          alert("Invalid input. Please fill in all fields.");
+          // An alert if the user does not fill in all the input tags
+          alert("Please enter your product details");
       }
   });
 });
 
 
 
+// Adding an edit button to edit products uding item as a prarameter to access the products in the array and index to access the position of the products in the arra
+function editProduct(item, index) {
+    
+    let modalDisplay = document.getElementById('modal-display');
 
-    // Change the button id to a class for the edit buttons
-let editButtons = document.querySelectorAll('#admin-edit-button');
-
-editButtons.forEach((butEd, index) => {
-    butEd.addEventListener('click', () => {
-        editModal(products[index], index); // Pass the item and its index for editing
-    });
-});
-
-function editModal(item, index) {
-    document.getElementById('modal-display').innerHTML = `
+      // creating the html for the modal and sending it to the position of the id "modalDisplay"
+    modalDisplay.innerHTML = `
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p id= "modal-i">Image URL:</p>
+            <p id="modal-i">Image URL:</p>
             <input id="url" class="form-control" value="${item.url}"></input>
-            <p id= "modal-pn">Product Name:</p>
+            <p id="modal-pn">Product Name:</p>
             <input id="pName" class="form-control" value="${item.name}"></input>
-            <p id= "modal-d">Description</p>
+            <p id="modal-d">Description</p>
             <input id="des" class="form-control" value="${item.description}"></input>
-            <p id= "modal-p">Price</p>
-            <input id="price" class="form-control" value="${item.price.replace('$', '')}"></input>
+            <p id="modal-p">Price</p>
+            <input id="price" class="form-control" value="${item.price}"></input>
           </div>
           <div class="modal-footer">
-            <button id="admin-button-save" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Save</button>
-            <button id="admin-button-close" type="button" class="btn btn-primary">Close</button>
+            <button id="admin-button-save" type="button" class="btn btn-secondary">Save Changes</button>
+            <button id="admin-button-close" type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
     `;
+    let saveChangesButton = document.getElementById('admin-button-save');
 
-    let eItem = new bootstrap.Modal(document.getElementById('modal-display'));
-    eItem.show();
-
-    document.getElementById('admin-button-save').addEventListener('click', function () {
-        // Retrieve updated values from the input fields
-        let imageUrl = document.getElementById('url').value;
-        let productName = document.getElementById('pName').value;
+    // adding an event listener to allow me to save the changes to the products
+    saveChangesButton.addEventListener('click', function () {
+        // allowing the users inputs to be accepted by the input tags
+        let name = document.getElementById('pName').value;
         let description = document.getElementById('des').value;
         let price = document.getElementById('price').value;
+        let url = document.getElementById('url').value;
     
-        // Validate input
-        if (imageUrl && productName && description && price) {
-            // Update the product details
-            products[index].url = imageUrl;
-            products[index].name = productName;
+        // validation to check is all fields are filled in
+        if (name && description && price && url) {
+            // accessing the the items in the"products" array by its index to ensure that the correct product information is returned
+            products[index].name = name;
             products[index].description = description;
+            // using backticks to add the dollar sign before the price
             products[index].price = `$${price}`;
-    
-            // Update local storage
+            products[index].url = url;
+            // Updating my local storage with the updated version of the products
             localStorage.setItem('products', JSON.stringify(products));
     
-            // Display the updated products on the admin page
             displayProductAdmin();
-    
-            // Close the modal
-            eItem.hide();
-        } else {
-            // Alert the user about invalid input
-            alert("Invalid input");
         }
     });
 }
 
-
-
-let adminSortButton = document.getElementById('admin-sort-button');
-
-adminSortButton.addEventListener('click', function() {
-    // Creating a function to sort products from cheapest to most expensive
-    products.sort(function(a, b) {
-        // Converting prices from strings to numbers in order to compare them
-        let price1 = parseFloat(a.price.replace('$', ''));
-        let price2 = parseFloat(b.price.replace('$', ''));
-
-        if (price1 < price2) {
-            // a should be shown first if -1 is returned
-            return -1;
-        } else if (price1 > price2) {
-            // b should be shown first if 1 is returned
-            return 1;
-        } else {
-            // If prices are equal there will be no change
-            return 0;
-        }
+let editButtons = document.querySelectorAll('#admin-edit-button');
+// Using "forEach" to allow me to add the event listener to all the edit buttons without having make an event listener for each individual button
+editButtons.forEach((editButton, index) => {
+    editButton.addEventListener('click', () => {
+        // calling the function and accessing the products array by 
+        editProduct(products[index], index);
     });
-
-    // Display the sorted products on the admin page
-    displayProductAdmin();
 });
+
+
+
+
+// function closeModal() {
+//     // Close the modal without saving changes
+//     let editModal = new bootstrap.Modal(document.getElementById('modal-display'));
+//     editModal.hide();
+// }
+
+// closeModal()
+
+// // Get the "Close" button element by its ID
+// let closeButton = document.getElementById('admin-button-close');
+
+// // Add a click event listener to the "Close" button
+// closeButton.addEventListener('click', closeModal);
 
 
 

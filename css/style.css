@@ -55,7 +55,7 @@
     justify-content: center;
   }
 
-  .home-button{
+  /* .home-button{
     margin-bottom: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -77,14 +77,19 @@
     color: var(--razerGreen);
     border-color: white;
   
-  }
+  } */
 
-  .home-button:active{
+  /* .home-button:active{
     box-shadow: 0 5px #666;
   transform: translatex(4px);
   }
-  
-  
+   */
+
+   /* .home-logo{
+    width: 150px;
+    height: 100px;
+   }
+   */
   #footer{
     color: var(--razerGreen);
     text-align: center;
@@ -380,17 +385,6 @@ margin-bottom: 30px;
 
 }
 
-.linkedin-div{
-margin-right: 30px;
-}
-
-.github-div{
-margin-right: 30px;
-}
-
-.whatsapp-div{
-margin-right: 30px;
-}
 
 .instagram-div{
 margin-right: 30px;
@@ -412,7 +406,7 @@ margin-right: 30px;
 
 #admin-add-button{
   width: 100px;
-  height: 40px;
+  height: 45px;
   color: black;
   font-family: "Roboto";
   font-size: 18px;
@@ -437,7 +431,7 @@ transform: translatex(4px);
 
  #admin-sort-button{
   width: 100px;
-  height: 40px;
+  height: 45px;
   color: black;
   font-family: "Roboto";
   font-size: 18px;
@@ -535,7 +529,7 @@ transform: translatex(4px);
 
 #admin-button-save{
   width: 100px;
-height: 40px;
+height: 45px;
 color: black;
 font-family: "Roboto";
 font-size: 18px;
@@ -560,7 +554,7 @@ transform: translatex(4px);
 
 #admin-button-close{
   width: 100px;
-height: 40px;
+height: 45px;
 color: black;
 font-family: "Roboto";
 font-size: 18px;
@@ -583,7 +577,21 @@ border-color: white;
 transform: translatex(4px);
 }
 
+#url{
+  height: 30px;
+}
 
+#pName{
+  height: 30px;
+}
+
+#des{
+  height: 30px;
+}
+
+#price{
+  height: 30px;
+}
 
 
 
@@ -601,6 +609,10 @@ transform: translatex(4px);
  
   #back-image {
     background-image: none;
+  }
+
+  #footer{
+    font-size: 14px;
   }
 }
 
@@ -620,6 +632,7 @@ transform: translatex(4px);
 
   #footer {
     margin-top: 20px;
+    font-size: 14px;
   }
 }
 
@@ -638,8 +651,10 @@ transform: translatex(4px);
 
   #footer {
     margin-top: 30px;
+    font-size: 14px;
   }
 }
+
 
 
 /* Products Page */
@@ -649,6 +664,10 @@ transform: translatex(4px);
   #products-add-cart-button{
     width: 130px;
     height: 60px;
+  }
+
+  #footer {
+    font-size: 14px;
   }
   
 }
@@ -660,7 +679,9 @@ transform: translatex(4px);
     height: 60px;
   }
   
-  
+  #footer {
+    font-size: 14px;
+  }
 }
 
 
@@ -670,7 +691,21 @@ transform: translatex(4px);
     height: 60px;
   }
 
+  #footer {
+    font-size: 14px;
+  }
+
 }
+
+
+@media (max-width: 1920px){
+
+  #products-add-cart-button{
+    width: 130px;
+    height: 50px;
+  }
+}
+
 
 
 
@@ -718,8 +753,10 @@ transform: translatex(4px);
 
   #footer {
     margin-top: 10px;
+      font-size: 14px;
+    }
   }
-}
+
 
 
 
@@ -746,6 +783,10 @@ transform: translatex(4px);
       max-width: 720px; 
   }
 
+  #footer {
+    font-size: 14px;
+  }
+
  
 }
 
@@ -758,5 +799,8 @@ transform: translatex(4px);
       max-width: 1080px; 
   }
 
+  #footer {
+    font-size: 14px;
+  }
  
 }
