@@ -27,36 +27,30 @@ function displayProducts() {
     productsTable.innerHTML = dProducts.join('');
 }
 
-// pushing the "purchased" array into local storage
-function addPur(index) {
-    purchased.push(products[index]);
-    localStorage.setItem('purchased', JSON.stringify(purchased));
-}
-displayProducts();
-
-
 
 let productsSortButton = document.getElementById('products-sort-button');
 
 productsSortButton.addEventListener('click', function() {
   // creating a function to sort products from cheapest to most expensive
     products.sort(function(a, b) {
-        // converting prices from strings to numbers in order to compare them
-        let price1 = parseFloat(a.price.replace('$', ''));
-        let price2 = parseFloat(b.price.replace('$', ''));
-        
-        if (price1 < price2) {
-         // a should be shown first if -1 is returned
-            return -1; 
-        } else if (price1 > price2) {
-            // b should be shown first if 1 is returned
-            return 1; 
-        } else {
-            // if prices are equal there will be no change
-            return 0; 
-        }
-    });
-    displayProducts();
+       // removing the dollar sign from the prices so that the numbers can be compared properly
+       let price1 = parseFloat(a.price.replace('$', ''));
+       let price2 = parseFloat(b.price.replace('$', ''));
+
+       if (price1 < price2) {
+           // if price1 is less than price 2 then return -1, a should be shown first if -1 is returned
+           return -1;
+       } else if (price1 > price2) {
+           // if price1 is more than price 2 then return 1, b should be shown first if 1 is returned
+           return 1;
+       } else {
+           // If price1 and price2 are equal then there will not be a change
+           return 0;
+       }
+   });
+
+   // calling the function to display the products on the admin page
+   displayProductAdmin();
 });
 
 
