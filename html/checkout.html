@@ -1,96 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Alumni Sans Collegiate One|Bebas Neue|Montserrat|Anton|Lobster|DM Serif Display">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto|Alumni Sans Collegiate One|Bebas Neue|Montserrat|Anton|Lobster|DM Serif Display">
 
-    <script src="https://kit.fontawesome.com/c91567d3e3.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/c91567d3e3.js" crossorigin="anonymous"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer>
+  </script>
 
-    <link rel="icon" href="https://i.postimg.cc/vBML7J3d/90610-razer-computer-logo-dark-hd-4k-black.jpg" type="image/x-icon"/>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/script/checkout.js" defer></script>
+  <link rel="icon" href="https://i.postimg.cc/vBML7J3d/90610-razer-computer-logo-dark-hd-4k-black.jpg"
+    type="image/x-icon" />
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/script/checkout.js" defer></script>
 
 </head>
+
 <body>
 
-          <nav class="navbar navbar-expand-lg bg-black navbar-dark">
-            <div class="container-fluid justify-content-center">
-              <a class="navbar-brand" href="#"><img class = "home-logo" src="" alt=""></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href= "/index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/html/products.html">Products</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/html/checkout.html">Checkout</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/html/about.html">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/html/contact.html">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/html/admin.html">Admin</a>
-                  </li>
-                </ul>
-              </div>
-          </nav>
-      
-      
-          <main>
-
-            <div class="container-fluid">
-
-            <table id = "checkoutTable-div" class = "table table-dark table-striped table-bordered table-hover">
+  <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="#"><img class="home-logo" src="" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/html/products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/html/checkout.html">Checkout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/html/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/html/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/html/admin.html">Admin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
-               
-              
+  <main>
 
-        
-            </table>
+    <div class="container-fluid">
 
-            <div class = "container-fluid d-flex justify-content-center">
-
-              <h5 id = "total">Total</h5>
-            <input id = "cart-total" type="text" readonly>
-
-          </div>
-
-          </div>
-
-            <div class = "container-fluid d-flex justify-content-center">
-
-              <button id = "checkout-button"  type="button" class="btn btn-light mx-2">Checkout</button>
-              
-              <button id = "clear-button" type="button" class="btn btn-dark">Clear</button>
-
-            </div>
-         
+      <table id="checkoutTable-div" class="table table-dark table-striped table-bordered table-hover">
 
 
 
 
 
-          </main>
+
+      </table>
+
+      <div class="container-fluid d-flex justify-content-center">
+
+        <h5 id="total">Total</h5>
+        <input id="cart-total" type="text" readonly>
+
+      </div>
+
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center">
+
+      <button id="checkout-button" type="button" class="btn btn-light mx-2">Checkout</button>
+
+      <button id="clear-button" type="button" class="btn btn-dark">Clear</button>
+
+    </div>
 
 
-          
 
-        
-          <div class = "footer-prob">
-            <footer id="footer">Razer - @Copyright&copy  - 2023</footer>
-          </div>
+
+
+
+  </main>
+
+
+
+
+
+  <div class="footer-prob">
+    <footer id="footer">Razer - @Copyright&copy - 2023</footer>
+  </div>
 </body>
+
 </html>

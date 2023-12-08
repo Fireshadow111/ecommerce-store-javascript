@@ -1,61 +1,62 @@
-*{
-    font-family: 'Roboto';
-  }
-  
-  :root{
-    --razerGreen: #44d62c;
-  }
-  body{
-    background-color: black;
-  }
-  
+* {
+  font-family: 'Roboto';
+}
 
-  /* Home Page */
-  
-  ul{
-    color: white;
-  }
-  
-  li{
-    font-size: 35px;
-    margin-right: 20px;
-    transition: text-decoration 0.5s;
-  }
-  
-  li:hover{
-    text-decoration: underline;
-    text-decoration-color: var(--razerGreen);
-    text-decoration-thickness: 3px;
-  }
-  
-  
-  a{
-    font-family: "DM Serif Display";
-    
-  }
+:root {
+  --razerGreen: #44d62c;
+}
 
-#back-image{
+body {
+  background-color: black;
+}
+
+
+/* Home Page */
+
+ul {
+  color: white;
+}
+
+li {
+  font-size: 35px;
+  margin-right: 20px;
+  transition: text-decoration 0.5s;
+}
+
+li:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--razerGreen);
+  text-decoration-thickness: 3px;
+}
+
+
+a {
+  font-family: "DM Serif Display";
+
+}
+
+#back-image {
   background-image: url(https://i.postimg.cc/VNr6fktn/904943.png);
   background-size: cover;
 }
 
-  img{
-    margin-top: 50px;
-  }
-  
+img {
+  margin-top: 50px;
+}
 
 
-  .homeImage{
-    margin-top: 70px;
-    
-  }
 
-  .fProducts{
-    display: flex;
-    justify-content: center;
-  }
+.homeImage {
+  margin-top: 70px;
 
-  /* .home-button{
+}
+
+.fProducts {
+  display: flex;
+  justify-content: center;
+}
+
+/* .home-button{
     margin-bottom: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -79,45 +80,45 @@
   
   } */
 
-  /* .home-button:active{
+/* .home-button:active{
     box-shadow: 0 5px #666;
   transform: translatex(4px);
   }
    */
 
-   /* .home-logo{
+/* .home-logo{
     width: 150px;
     height: 100px;
    }
    */
-  #footer{
-    color: var(--razerGreen);
-    text-align: center;
-  } 
-  
-  .footer-prob{
-    position: sticky;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+#footer {
+  color: var(--razerGreen);
+  text-align: center;
+}
+
+.footer-prob {
+  position: sticky;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 
-  /* Product Page */
+/* Product Page */
 
 
-  .products-head{
-    background-color: black;
-    color: white;
-    border: 5px solid var(--razerGreen);
-    border-radius: 50px;
-    font-family: "Roboto";
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 60px;
-  }
+.products-head {
+  background-color: black;
+  color: white;
+  border: 5px solid var(--razerGreen);
+  border-radius: 50px;
+  font-family: "Roboto";
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 60px;
+}
 
-  #products-add-cart-button{
+#products-add-cart-button {
   width: 120px;
   height: 50px;
   color: black;
@@ -129,137 +130,137 @@
   border-radius: 50px;
   cursor: pointer;
   transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-  }
- 
-  #products-add-cart-button:hover{
-    background-color: black;
+}
+
+#products-add-cart-button:hover {
+  background-color: black;
   color: var(--razerGreen);
   border-color: white;
-  
-  }
 
-  #products-add-cart-button:active{
-    box-shadow: 0 5px #666;
+}
+
+#products-add-cart-button:active {
+  box-shadow: 0 5px #666;
   transform: translatex(4px);
-  }
+}
 
-  #product-cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    
-  }
+#product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 
-  #products-search-button{
-    width: 150px;
-    height: 50px;
-    color: black;
-    font-family: "Roboto";
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--razerGreen);
-    border: solid 3px black;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-  }
+}
 
-  #products-search-button:hover{
-    background-color: black;
-    color: var(--razerGreen);
-    border-color: white;
-  }
+#products-search-button {
+  width: 150px;
+  height: 50px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
 
-  #products-search-button:active{
-    box-shadow: 0 5px #666;
+#products-search-button:hover {
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+}
+
+#products-search-button:active {
+  box-shadow: 0 5px #666;
   transform: translatex(4px);
-  }
+}
 
-  #products-sort-button{
-    width: 150px;
-    height: 50px;
-    color: black;
-    font-family: "Roboto";
-    font-size: 18px;
-    font-weight: bold;
-    background-color: var(--razerGreen);
-    border: solid 3px black;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-  }
+#products-sort-button {
+  width: 150px;
+  height: 50px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
 
-  #products-sort-button:hover{
-    background-color: black;
-    color: var(--razerGreen);
-    border-color: white;
-  }
+#products-sort-button:hover {
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+}
 
-  #products-sort-button:active{
-    box-shadow: 0 5px #666;
+#products-sort-button:active {
+  box-shadow: 0 5px #666;
   transform: translatex(4px);
-  }
+}
 
-.card{
+.card {
   background-color: var(--razerGreen);
 }
 
 /* Checkout Page */
 
-#checkout-button{
-  width: 150px;
-    height: 50px;
-
-    font-family: "Roboto";
-    font-size: 18px;
-    font-weight: bold;
-    
-    border-radius: 50px;
-    cursor: pointer;
-    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-}
-
-#checkout-button:hover{
-  background-color: black;
-  color: white;
-}
-
-#checkout-button:active{
-  box-shadow: 0 5px #666;
-transform: translatex(4px);
-}
-
-#clear-button{
+#checkout-button {
   width: 150px;
   height: 50px;
 
   font-family: "Roboto";
   font-size: 18px;
   font-weight: bold;
-  
+
   border-radius: 50px;
   cursor: pointer;
   transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 }
 
-#clear-button:hover{
+#checkout-button:hover {
+  background-color: black;
+  color: white;
+}
+
+#checkout-button:active {
+  box-shadow: 0 5px #666;
+  transform: translatex(4px);
+}
+
+#clear-button {
+  width: 150px;
+  height: 50px;
+
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#clear-button:hover {
   background-color: white;
   color: black;
 }
 
-#clear-button:active{
+#clear-button:active {
   box-shadow: 0 5px #666;
-transform: translatex(4px);
+  transform: translatex(4px);
 }
 
 
-#cart-total{
+#cart-total {
   width: 300px;
   height: 30px;
 }
 
-#total{
+#total {
   color: var(--razerGreen);
   margin-top: 8px;
   margin-right: 10px;
@@ -267,45 +268,45 @@ transform: translatex(4px);
 }
 
 
-  /* About Page */
+/* About Page */
 
-  .about-head{
-    background-color: black;
-    color: white;
-    border: 5px solid var(--razerGreen);
-    border-radius: 50px;
-    font-family: "Roboto";
-    font-size: 50px;
-    text-align: center;
-  }
-
-  .about-title{
-    color:var(--razerGreen);
-    text-align: center;
-    margin-top: 30px;
+.about-head {
+  background-color: black;
+  color: white;
+  border: 5px solid var(--razerGreen);
+  border-radius: 50px;
+  font-family: "Roboto";
+  font-size: 50px;
+  text-align: center;
 }
 
-.razer-banner{
+.about-title {
+  color: var(--razerGreen);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.razer-banner {
   width: 100%;
   height: 100%;
   margin-bottom: 10px;
-  
+
 }
 
-.razer-banner-div{
+.razer-banner-div {
   display: flex;
   justify-content: center;
 }
 
-.about-body{
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-    font-size: 28px;
+.about-body {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  font-size: 28px;
 }
 
 
- 
+
 
 
 /* Contact Page */
@@ -314,14 +315,14 @@ transform: translatex(4px);
   border-radius: 5px;
   background-color: black;
   padding: 10px;
-} 
-
-.contact-div{
-  margin-bottom: 50px;
-  
 }
 
-.contact-head{
+.contact-div {
+  margin-bottom: 50px;
+
+}
+
+.contact-head {
   background-color: black;
   color: white;
   border: 5px solid var(--razerGreen);
@@ -331,69 +332,70 @@ transform: translatex(4px);
 }
 
 
-.contactForm-div{
+.contactForm-div {
   width: 400px;
   margin: auto;
-  
+
 }
 
-label{
+label {
   font-family: "Roboto";
   font-size: 22px;
   color: var(--razerGreen);
 }
 
-input[type=text], textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-margin-top: 6px;
-margin-bottom: 16px;
-resize: vertical;
+input[type=text],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
 input[type=submit] {
-width: 120px;
-height: 45px;
-margin-right: 5px;
-font-family: "Roboto";
-font-size: 22px;
-font-weight: bold;
-background-color: var(--razerGreen);
-border: solid 3px black;
-border-radius: 50px;
-cursor: pointer;
-transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  width: 120px;
+  height: 45px;
+  margin-right: 5px;
+  font-family: "Roboto";
+  font-size: 22px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 }
 
 input[type=submit]:hover {
-background-color: black;
-color: var(--razerGreen);
-border-color: white;
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
 }
 
-input[type=submit]:active{
+input[type=submit]:active {
   box-shadow: 0 5px #666;
-transform: translatex(4px);
+  transform: translatex(4px);
 }
 
-.icons{
-display: flex;
-justify-content: center;
-margin-top: 30px;
-margin-bottom: 30px;
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
 }
 
 
-.instagram-div{
-margin-right: 30px;
+.instagram-div {
+  margin-right: 30px;
 }
 
 
 /* Admin */
 
-.admin-head{
+.admin-head {
 
   background-color: black;
   color: white;
@@ -404,7 +406,7 @@ margin-right: 30px;
   text-align: center;
 }
 
-#admin-add-button{
+#admin-add-button {
   width: 100px;
   height: 45px;
   color: black;
@@ -416,20 +418,20 @@ margin-right: 30px;
   border-radius: 50px;
   cursor: pointer;
   transition: border-color 0.5s, background-color 0.5s, color 0.5s;
- }
+}
 
- #admin-add-button:hover{
+#admin-add-button:hover {
   background-color: black;
   color: var(--razerGreen);
   border-color: white;
- }
-
- #admin-add-button:active{
-  box-shadow: 0 5px #666;
-transform: translatex(4px);
 }
 
- #admin-sort-button{
+#admin-add-button:active {
+  box-shadow: 0 5px #666;
+  transform: translatex(4px);
+}
+
+#admin-sort-button {
   width: 100px;
   height: 45px;
   color: black;
@@ -441,155 +443,155 @@ transform: translatex(4px);
   border-radius: 50px;
   cursor: pointer;
   transition: border-color 0.5s, background-color 0.5s, color 0.5s;
- }
+}
 
- #admin-sort-button:hover{
+#admin-sort-button:hover {
   background-color: black;
   color: var(--razerGreen);
   border-color: white;
- }
+}
 
- #admin-sort-button:active{
+#admin-sort-button:active {
   box-shadow: 0 5px #666;
-transform: translatex(4px);
+  transform: translatex(4px);
 }
 
 
-#admin-edit-button{
-width: 100px;
-height: 40px;
-color: black;
-font-family: "Roboto";
-font-size: 18px;
-font-weight: bold;
-background-color: var(--razerGreen);
-border: solid 3px black;
-border-radius: 50px;
-cursor: pointer;
-transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-}
-
-#admin-edit-button:hover{
-background-color: black;
-color: var(--razerGreen);
-border-color: white;
-}
-
-#admin-edit-button:active{
-  box-shadow: 0 5px #666;
-transform: translatex(4px);
-}
-
-#admin-del-button{
-width: 100px;
-height: 40px;
-margin-right: 5px;
-font-family: "Roboto";
-font-size: 18px;
-font-weight: bold;
-background-color: var(--razerGreen);
-border: solid 3px black;
-border-radius: 50px;
-cursor: pointer;
-transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-}
-
-#admin-del-button:hover{
-background-color: black;
-color: var(--razerGreen);
-border-color: white;
-}
-
-#admin-del-button:active{
-  box-shadow: 0 5px #666;
-transform: translatex(4px);
-}
-
-#modal-i{
-  color: var(--razerGreen);
-  margin-top: 10px;
-}
-
-#modal-pn{
-  color: var(--razerGreen);
-  margin-top: 10px;
-}
-
-
-#modal-d{
-  color: var(--razerGreen);
-  margin-top: 10px;
-}
-
-#modal-p{
-  color: var(--razerGreen);
-  margin-top: 10px;
-}
-
-
-#admin-button-save{
+#admin-edit-button {
   width: 100px;
-height: 45px;
-color: black;
-font-family: "Roboto";
-font-size: 18px;
-font-weight: bold;
-background-color: var(--razerGreen);
-border: solid 3px black;
-border-radius: 50px;
-cursor: pointer;
-transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  height: 40px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 }
 
-#admin-button-save:hover{
+#admin-edit-button:hover {
   background-color: black;
-color: var(--razerGreen);
-border-color: white;
+  color: var(--razerGreen);
+  border-color: white;
 }
 
-#admin-button-save:active{
+#admin-edit-button:active {
   box-shadow: 0 5px #666;
-transform: translatex(4px);
+  transform: translatex(4px);
 }
 
-#admin-button-close{
+#admin-del-button {
   width: 100px;
-height: 45px;
-color: black;
-font-family: "Roboto";
-font-size: 18px;
-font-weight: bold;
-background-color: var(--razerGreen);
-border: solid 3px black;
-border-radius: 50px;
-cursor: pointer;
-transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  height: 40px;
+  margin-right: 5px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 }
 
-#admin-button-close:hover{
+#admin-del-button:hover {
   background-color: black;
-color: var(--razerGreen);
-border-color: white;
+  color: var(--razerGreen);
+  border-color: white;
 }
 
-#admin-button-close:active{
+#admin-del-button:active {
   box-shadow: 0 5px #666;
-transform: translatex(4px);
+  transform: translatex(4px);
 }
 
-#url{
+#modal-i {
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+#modal-pn {
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+
+#modal-d {
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+#modal-p {
+  color: var(--razerGreen);
+  margin-top: 10px;
+}
+
+
+#admin-button-save {
+  width: 100px;
+  height: 45px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-button-save:hover {
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+}
+
+#admin-button-save:active {
+  box-shadow: 0 5px #666;
+  transform: translatex(4px);
+}
+
+#admin-button-close {
+  width: 100px;
+  height: 45px;
+  color: black;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--razerGreen);
+  border: solid 3px black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+
+#admin-button-close:hover {
+  background-color: black;
+  color: var(--razerGreen);
+  border-color: white;
+}
+
+#admin-button-close:active {
+  box-shadow: 0 5px #666;
+  transform: translatex(4px);
+}
+
+#url {
   height: 30px;
 }
 
-#pName{
+#pName {
   height: 30px;
 }
 
-#des{
+#des {
   height: 30px;
 }
 
-#price{
+#price {
   height: 30px;
 }
 
@@ -599,19 +601,19 @@ transform: translatex(4px);
 
 @media (max-width: 300px) {
   body {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
   .navbar {
-    padding: 5px; 
+    padding: 5px;
   }
 
- 
+
   #back-image {
     background-image: none;
   }
 
-  #footer{
+  #footer {
     font-size: 14px;
   }
 }
@@ -621,14 +623,14 @@ transform: translatex(4px);
 
 @media (max-width: 720px) {
   body {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
   .navbar {
-    padding: 10px; 
+    padding: 10px;
   }
 
-  
+
 
   #footer {
     margin-top: 20px;
@@ -641,7 +643,7 @@ transform: translatex(4px);
 
 @media (max-width: 1080px) {
   body {
-    font-size: 18px; 
+    font-size: 18px;
   }
 
   .navbar {
@@ -661,7 +663,7 @@ transform: translatex(4px);
 
 
 @media (max-width: 300px) {
-  #products-add-cart-button{
+  #products-add-cart-button {
     width: 130px;
     height: 60px;
   }
@@ -669,16 +671,16 @@ transform: translatex(4px);
   #footer {
     font-size: 14px;
   }
-  
+
 }
 
 
 @media (max-width: 720px) {
-  #products-add-cart-button{
+  #products-add-cart-button {
     width: 130px;
     height: 60px;
   }
-  
+
   #footer {
     font-size: 14px;
   }
@@ -686,7 +688,7 @@ transform: translatex(4px);
 
 
 @media (max-width: 1080px) {
-  #products-add-cart-button{
+  #products-add-cart-button {
     width: 130px;
     height: 60px;
   }
@@ -698,9 +700,9 @@ transform: translatex(4px);
 }
 
 
-@media (max-width: 1920px){
+@media (max-width: 1920px) {
 
-  #products-add-cart-button{
+  #products-add-cart-button {
     width: 130px;
     height: 50px;
   }
@@ -733,7 +735,8 @@ transform: translatex(4px);
     font-size: 16px;
   }
 
-  input[type=text], textarea {
+  input[type=text],
+  textarea {
     font-size: 14px;
   }
 
@@ -753,9 +756,9 @@ transform: translatex(4px);
 
   #footer {
     margin-top: 10px;
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
+}
 
 
 
@@ -765,42 +768,42 @@ transform: translatex(4px);
 
 @media (max-width: 300px) {
   body {
-      font-size: 12px; 
+    font-size: 12px;
   }
 
   .container-fluid {
-      max-width: 300px; 
+    max-width: 300px;
   }
 
 }
 
 @media (max-width: 720px) {
   body {
-      font-size: 14px; 
+    font-size: 14px;
   }
 
   .container-fluid {
-      max-width: 720px; 
+    max-width: 720px;
   }
 
   #footer {
     font-size: 14px;
   }
 
- 
+
 }
 
 @media (max-width: 1080px) {
   body {
-      font-size: 116px; 
+    font-size: 116px;
   }
 
   .container-fluid {
-      max-width: 1080px; 
+    max-width: 1080px;
   }
 
   #footer {
     font-size: 14px;
   }
- 
+
 }
