@@ -91,8 +91,10 @@ img {
    }
    */
 #footer {
-  color: var(--razerGreen);
+  color: black;
+  font-weight: bolder;
   text-align: center;
+  background-color: var(--razerGreen);
 }
 
 .footer-prob {
